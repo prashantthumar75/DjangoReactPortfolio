@@ -15,15 +15,27 @@ const Main = () => {
 
   // click to scroll
   $(document).ready(function () {
+    // $(".mainMenu li a").click(function (e) {
+    //   var targetHref = $(this).attr("href");
+
+    //   $("html, body").animate(
+    //     {
+    //       scrollTop: $(targetHref).offset().top,
+    //     },
+    //     1000
+    //   );
     $(".mainMenu li a").click(function (e) {
       var targetHref = $(this).attr("href");
+      var $targetElement = $(targetHref);
 
-      $("html, body").animate(
-        {
-          scrollTop: $(targetHref).offset().top,
-        },
-        1000
-      );
+      if ($targetElement.length) {
+        $("html, body").animate(
+          {
+            scrollTop: $targetElement.offset().top,
+          },
+          1000
+        );
+      }
       $(".mainMenu").removeClass("act");
 
       if ($(this).hasClass("act")) {

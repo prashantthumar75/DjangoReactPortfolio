@@ -1,7 +1,7 @@
-import React, { useEffect, useRef, useState } from "react";
-import "./Email.css";
-import { useGetContactsQuery } from "../../Api/api";
 import emailjs from "@emailjs/browser";
+import React, { useEffect, useRef, useState } from "react";
+import { useGetContactsQuery } from "../../Api/api";
+import "./Email.css";
 
 const Email = (e) => {
   const form = useRef();
@@ -35,14 +35,14 @@ const Email = (e) => {
   if (isFetching) return "loading";
   return (
     <>
-      <div className="reachme-container">
+      <div className="reachme-container" id="contact">
         <div className="reachme-title2">
           <h2>I Want To Hear From You</h2>
 
           <h3>Contact Me</h3>
         </div>
         <div className="row">
-          <div className="col-md-5">
+          <div className="col-md-5  ">
             <div className="reachme-title">
               <div className="row">
                 {contactsDetails &&

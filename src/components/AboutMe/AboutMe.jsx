@@ -1,9 +1,12 @@
-import "./AboutMe.css";
-import { useGetAboutMeQuery, useGetHomeDetailsQuery } from "../../Api/api";
 import { useEffect, useState } from "react";
-import decor1 from "../../images/decoration/dots-1.png";
+import { useGetAboutMeQuery, useGetHomeDetailsQuery } from "../../Api/api";
 import reactagle from "../../images/decoration/Rectangle-7.png";
+import decor1 from "../../images/decoration/dots-1.png";
 import shady from "../../images/decoration/dots.png";
+import image from "./../../images/Gaming-rafiki.svg";
+import "./AboutMe.css";
+// import image from "./../../images/Publish article-rafiki.svg";
+
 
 const AboutMe = () => {
   const { data: aboutData, isFetching } = useGetAboutMeQuery();
@@ -40,10 +43,11 @@ const AboutMe = () => {
               </div>
               <div className="abouMe-row">
                 <div
-                  className=" col-lg-6 col-md-5 col-sm-12 about-img"
+                  className="col-lg-6 col-md-5 col-sm-12 about-img"
                   data-aos="fade-up-right"
                 >
-                  <img src={`${img_300}${details.about_avatar}`} alt="" />
+                  {/* <img src={`${img_300}${details.about_avatar}`} alt="" /> */}
+                  <img src={image} alt="logo" />
                 </div>
                 <div
                   className=" col-lg-6 col-md-7  col-sm-12 about_myinfo"

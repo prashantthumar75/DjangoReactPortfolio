@@ -1,6 +1,6 @@
-import "./Services.css";
-import { useGetServicesQuery } from "../../Api/api";
 import { useEffect, useState } from "react";
+import { useGetServicesQuery } from "../../Api/api";
+import "./Services.css";
 
 const Services = () => {
   const { data: services, isFetching } = useGetServicesQuery();
@@ -19,7 +19,9 @@ const Services = () => {
         <div className="service-container">
           <div className="service-title">
             <h2>What Service i Offer you</h2>
-
+            <a href="https://storyset.com/computer">
+              Computer illustrations by Storyset
+            </a>
             <h3>Services</h3>
           </div>
 

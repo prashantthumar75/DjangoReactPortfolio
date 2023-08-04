@@ -1,8 +1,18 @@
-import "./Navbar.css";
+import { useState } from "react";
 import { Link } from "react-router-dom";
+import "./Navbar.css";
 import Main from "./nav";
 
+
 const Navbar = () => {
+   const [activeNavItem, setActiveNavItem] = useState("home"); // Set the default active item here
+
+   // Event handler to update the active navbar item when clicked
+   const handleNavItemClick = (navItemId) => {
+    console.log(navItemId);
+    setActiveNavItem(navItemId);
+     
+   };
   return (
     <>
       <Main />
@@ -10,41 +20,60 @@ const Navbar = () => {
         <i className="icofont-navigation-menu"></i>
       </button>
       <header id="header" className="fixed-top ">
-        <div className="container-fluid  navbur">
+        <div className="container-fluid navbur">
           <div className="navi">
             <div className="col-xl-12 d-flex align-items-center lefty">
               <h5 className="ld-flex mr-auto devman">
-                <img
+                {/* <img
                   src="https://code.google.com/images/developers.png"
                   alt=""
-                />
-                Pro.dev <span className="blink"> _</span>
+                /> */}
+                Full Stack Developer
+                <span className="blink"> _ </span>
               </h5>
               <nav className="nav-menu  mainMenu">
                 <ul>
                   <li
-                    className="active"
-                    data-aos="fade-down"
+                    onClick={() => handleNavItemClick("home")}
+                    className={activeNavItem === "home" ? "active" : ""}
                     data-aos-duration="300"
                   >
-                    <a href="#home"> Home</a>
+                    <a href="#home">Home</a>
                   </li>
-                  <li data-aos="fade-down" data-aos-duration="600">
+                  <li
+                    onClick={() => handleNavItemClick("about")}
+                    className={activeNavItem === "about" ? "active" : ""}
+                    data-aos-duration="200"
+                  >
                     <a href="#about">About</a>
                   </li>
-                  <li data-aos="fade-down" data-aos-duration="900">
+                  <li
+                    onClick={() => handleNavItemClick("services")}
+                    className={activeNavItem === "services" ? "active" : ""}
+                    data-aos-duration="900"
+                  >
                     <a href="#services">Services</a>
                   </li>
-                  <li data-aos="fade-down" data-aos-duration="1200">
+                  <li
+                    onClick={() => handleNavItemClick("skills")}
+                    className={activeNavItem === "skills" ? "active" : ""}
+                    data-aos-duration="1200"
+                  >
                     <a href="#skills">Skills</a>
                   </li>
-
-                  <li data-aos="fade-down" data-aos-duration="1500">
-                    <a href="#work">My Work</a>
+                  <li
+                    onClick={() => handleNavItemClick("work")}
+                    className={activeNavItem === "work" ? "active" : ""}
+                    data-aos-duration="1500"
+                  >
+                    <a href="#work">projects</a>
                   </li>
-
-                  <li data-aos="fade-down" data-aos-duration="1800">
-                    <a href="#contact">Contact</a>
+                  <li
+                    onClick={() => handleNavItemClick("contact")}
+                    className={activeNavItem === "contact" ? "active" : ""}
+                    data-aos-duration="1900"
+                  >
+                    <a href="#contact">contact</a>
                   </li>
                 </ul>
               </nav>
@@ -52,7 +81,7 @@ const Navbar = () => {
                 <i className="fa fa-github"></i>
               </div>
               <div className="left-btns">
-                <div class=" " id="theme-button2">
+                <div id="theme-button2">
                   <input id="toggle" class="toggle" type="checkbox"></input>
                 </div>
                 <div>

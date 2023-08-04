@@ -1,7 +1,7 @@
+import { useEffect, useState } from "react";
+import { useGetSocialMediaQuery } from "../../Api/api";
 import "./Footer.css";
 import Main from "./scrollTop";
-import { useGetSocialMediaQuery } from "../../Api/api";
-import { useEffect, useState } from "react";
 const Footer = () => {
   const { data: social, isFetching } = useGetSocialMediaQuery();
   const [socialDetails, setSocialDetails] = useState(social);
@@ -37,7 +37,7 @@ const Footer = () => {
           <div className="footer-info">
             <div className="copywrite">
               <p>
-                © {new Date().getFullYear()} All rights reserved | Made with ❤️
+                © All rights reserved | Made with ❤️
                 by James Waweru
               </p>
             </div>

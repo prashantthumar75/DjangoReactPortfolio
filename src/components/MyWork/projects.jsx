@@ -1,10 +1,9 @@
-import { useGetProjectsQuery } from "../../Api/api";
-import { useEffect, useState } from "react";
-import "./projects.css";
-import React from "react";
-import OwlCarousel from "react-owl-carousel";
 import "owl.carousel/dist/assets/owl.carousel.css";
 import "owl.carousel/dist/assets/owl.theme.default.css";
+import React, { useEffect, useState } from "react";
+import OwlCarousel from "react-owl-carousel";
+import { useGetProjectsQuery } from "../../Api/api";
+import "./projects.css";
 
 const Projects = () => {
   const { data: projects, isFetching } = useGetProjectsQuery();
@@ -55,9 +54,9 @@ const Projects = () => {
   return (
     <div className="mywork " id="work">
       <div className="mywork-title">
-        <h2>Check Out My Reacet Projects</h2>
+        <h2>Check Out My Recent Projects</h2>
 
-        <h3>My Work</h3>
+        <h3>projects</h3>
       </div>
       <div className="project-row">
         {projectsDetails?.length && (
@@ -95,12 +94,7 @@ const Projects = () => {
                       href={details.project_link}
                       target="_blank"
                       rel="noopener noreferrer"
-                    >
-                      <h6 className="learnmore">
-                        <i class="fa fa-github" aria-hidden="true"></i> &nbsp;
-                        Source Code
-                      </h6>
-                    </a>
+                    ></a>
                   </div>
                 </div>
               </div>

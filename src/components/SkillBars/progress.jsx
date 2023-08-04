@@ -1,9 +1,9 @@
-import "./progress.css";
-import { useGetLanguagesIconsQuery } from "../../Api/api";
+import $ from "jquery";
 import { useEffect, useState } from "react";
 import AliceCarousel from "react-alice-carousel";
 import "react-alice-carousel/lib/alice-carousel.css";
-import $ from "jquery";
+import { useGetLanguagesIconsQuery } from "../../Api/api";
+import "./progress.css";
 
 var nav = $("body");
 

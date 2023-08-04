@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
+import { useGetHomeDetailsQuery, useGetSocialMediaQuery } from "../../Api/api";
 import decor3 from "../../images/decoration/Group-31.png";
-import decor4 from "../../images/decoration/Path-25.png";
+// import image from "./../../images/Cross-platform software-bro (1).svg";
+import image from "./../../images/Setup Wizard-cuate.svg";
 import "./Intro.css";
-import { useGetHomeDetailsQuery } from "../../Api/api";
-import { useGetSocialMediaQuery } from "../../Api/api";
 
 const Intro = () => {
   const { data: conta } = useGetSocialMediaQuery();
@@ -17,6 +17,10 @@ const Intro = () => {
   useEffect(() => {
     setHomeDetails(homeData);
     setContact2Details(conta);
+    document.addEventListener('DOMContentLoaded', 
+    function () {
+      window.setTimeout(document.querySelector('svg').classList.add('animated'),1000)
+    })
 
     document.title = title_name;
     // console.log(conta);
@@ -37,7 +41,7 @@ const Intro = () => {
             </div>
             <div className="small-intro">
               <div className="intro-row">
-                <div className="col-lg-5  col-md-6 col-sm-12 intro-left">
+                <div className="col-lg-5 col-md-6 col-sm-12 intro-left">
                   <div className="intro-name">
                     <h3
                       className="hello"
@@ -88,22 +92,22 @@ const Intro = () => {
                     data-aos-duration="1800"
                   >
                     <span>Follow Me:</span>
-                    <ul>
+                    <ul className="followme">
                       <li>
                         {contacts1Details &&
                           contacts1Details.map((data1) => (
                             <a
                               href={data1.link}
-                              className="icon-link"
+                              // className="icon-link"
                               target="_blank"
                               rel="noopener noreferrer"
                               key={data1.id}
                             >
-                              <i className={data1.social_icon}></i>
+                              <i className={data1.social_icon} id="insta"></i>
                             </a>
                           ))}
                       </li>
-                    </ul>
+                      </ul>
                   </div>
                 </div>
                 <div
@@ -116,11 +120,13 @@ const Intro = () => {
                       src="https://drive.google.com/uc?id=1iyVyaGyw5HniEugxd1-qZ54rpFpn2UTc"
                       alt=""
                     /> */}
-                    <img
+                    {/* <img
                       className="intro-img"
-                      src={`${img_300}${detail.avatar_img}`}
+                      src=""
+                      // src={`${img_300}${detail.avatar_img}`}
                       alt=""
-                    />
+                    /> */}
+                    <img className="intro-img" src={image} alt="logo" />
                   </div>
                 </div>
               </div>
